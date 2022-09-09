@@ -1,0 +1,48 @@
+<div class="container" style="margin-top: 10px; padding: 20px">
+  <h1 style="text-align: center">
+    {{ selectedContact.firstName }} {{ selectedContact.lastName }}
+  </h1>
+  <div class="card" style="width: 100%">
+    <img [src]="selectedContact.contactImg" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h1>{{ selectedContact.firstName }} {{ selectedContact.lastName }}</h1>
+      <h2 class="card-title">{{ selectedContact.companyName }}</h2>
+      <ul class="list-group list-group-flush" style="font-size: xx-large">
+        <li class="list-group-item">
+          Contact @ Mobile : {{ selectedContact.mobileNumber }}
+        </li>
+        <li class="list-group-item">
+          Contact @ Home : {{ selectedContact.homeNumber }}
+        </li>
+        <li class="list-group-item">
+          Email Address : {{ selectedContact.emailAddr }}
+        </li>
+        <li class="list-group-item">
+          <div class="card-body" style="text-align: center">
+            <a
+              href="#"
+              class="btn btn-lg btn-success"
+              [routerLink]="['/contacts']"
+              >Go Back</a
+            >
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<footer class="bg-dark text-center text-white">
+  <div class="container p-4">
+    <section class="mb-4">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio
+        earum repellat quaerat voluptatibus placeat nam, commodi optio pariatur
+        est quia magnam eum harum corrupti dicta, aliquam sequi voluptate quas.
+      </p>
+    </section>
+  </div>
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    © 2020 Copyright:
+    <a class="text-white" href="#">ContactManager.com</a>
+  </div>
+</footer>

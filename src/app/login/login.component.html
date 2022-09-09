@@ -1,0 +1,59 @@
+<div class="container" style="margin-top: 10px; padding: 20px">
+  <h1 style="text-align: center">Welcome back User!</h1>
+  <img
+    src="https://cdn.pixabay.com/photo/2017/07/15/19/42/train-track-2507499_960_720.jpg"
+    alt="Unable to Load Image"
+    height="250px"
+    class="rounded mx-auto d-block"
+  />
+  <h3 style="text-align: center">Please Login Here:</h3>
+  <div>
+    <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm)">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          ngModel
+          id="email"
+          name="email"
+          #email="ngModel"
+          placeholder="Your Email Address goes here"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          ngModel
+          id="password"
+          name="password"
+          #password="ngModel"
+          placeholder="Your password goes here"
+        />
+      </div>
+      <button type="submit" class="btn btn-success mx-auto d-block">
+        Login Me In!
+      </button>
+    </form>
+  </div>
+</div>
+<footer class="bg-dark text-center text-white">
+  <div class="container p-4">
+    <section class="mb-4">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio
+        earum repellat quaerat voluptatibus placeat nam, commodi optio pariatur
+        est quia magnam eum harum corrupti dicta, aliquam sequi voluptate quas.
+      </p>
+    </section>
+  </div>
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    © 2020 Copyright:
+    <a class="text-white" href="#">ContactManager.com</a>
+  </div>
+</footer>

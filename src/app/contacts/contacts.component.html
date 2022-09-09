@@ -1,0 +1,105 @@
+<div class="container" style="margin-top: 10px; padding: 20px">
+  <h1 style="text-align: center">Here is the list of all your contacts</h1>
+  <br />
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <button
+        class="btn btn-outline-success dropdown-toggle btn-lg"
+        type="button"
+        data-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Apply Filter
+      </button>
+      <div class="dropdown-menu">
+        <p class="dropdown-item">By Name</p>
+        <div role="separator" class="dropdown-divider"></div>
+        <p class="dropdown-item">By Company</p>
+        <div role="separator" class="dropdown-divider"></div>
+        <p class="dropdown-item">By Contact Number</p>
+      </div>
+    </div>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search for a Contact here"
+      style="font-size: x-large"
+    />
+    <div class="input-group-append">
+      <button
+        class="btn btn-outline-success btn-lg"
+        type="button"
+        id="button-addon2"
+      >
+        Search Contact
+      </button>
+    </div>
+  </div>
+  <h4 *ngIf="noContactMessage" style="text-align: center; color: red">
+    You don't have any Contacts yet! <br />
+    Try Adding some Contacts!
+  </h4>
+  <br />
+  <div class="row row-cols-1 row-cols-md-2">
+    <div class="card col mb-4" *ngFor="let c of allContacts">
+      <div class="card">
+        <img
+          src="{{ c.contactImg }}"
+          class="card-img-top"
+          alt="No Image Uploaded"
+          height="500px"
+          width="500px"
+        />
+        <div class="card-body">
+          <h2 class="card-title">{{ c.firstName }} {{ c.lastName }}</h2>
+          <h6>{{ c.companyName }}</h6>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            Contact @ Mobile : {{ c.mobileNumber }}
+          </li>
+          <li class="list-group-item">Contact @ Home : {{ c.homeNumber }}</li>
+          <li class="list-group-item">Email Address : {{ c.emailAddr }}</li>
+        </ul>
+        <div class="card-body" style="text-align: center">
+          <button
+            type="button"
+            class="btn btn-warning btn-lg float-left"
+            [routerLink]="['/updateContact', c.id]"
+          >
+            Update
+          </button>
+          <button
+            type="button"
+            class="btn btn-info btn-lg"
+            [routerLink]="['/viewContact', c.id]"
+          >
+            View Contact
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger btn-lg float-right"
+            (click)="deleteContact(c.id)"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="bg-dark text-center text-white">
+  <div class="container p-4">
+    <section class="mb-4">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio
+        earum repellat quaerat voluptatibus placeat nam, commodi optio pariatur
+        est quia magnam eum harum corrupti dicta, aliquam sequi voluptate quas.
+      </p>
+    </section>
+  </div>
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    © 2020 Copyright:
+    <a class="text-white" href="#">ContactManager.com</a>
+  </div>
+</footer>

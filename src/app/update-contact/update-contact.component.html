@@ -1,0 +1,132 @@
+<div class="container" style="margin-top: 10px; padding: 20px">
+  <h1 style="text-align: center">Change the Data to Update Contact</h1>
+  <div>
+    <img
+      [src]="selectedContact.contactImg"
+      class="rounded mx-auto d-block"
+      alt="Contact Image Not Found"
+      height="300px"
+      *ngIf="toggleOldImage"
+    />
+    <img
+      [src]="imageURL"
+      class="rounded mx-auto d-block"
+      alt="Contact Image Not Found"
+      height="300px"
+      *ngIf="toggleNewImage"
+    />
+    <br />
+    <button
+      type="submit"
+      class="btn btn-info mx-auto d-block"
+      (click)="updateImage()"
+    >
+      Update Image for the Contact
+    </button>
+    <div>
+      <form
+        #udpateContactForm="ngForm"
+        (ngSubmit)="updateContact(udpateContactForm)"
+      >
+        <div class="form-group">
+          <label for="exampleInputFirstName">Enter First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputFirstName"
+            ngModel
+            id="firstName"
+            name="firstName"
+            #firstName="ngModel"
+            [(ngModel)]="selectedContact.firstName"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputLastName">Enter Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputLastName"
+            ngModel
+            id="lastName"
+            name="lastName"
+            #lastName="ngModel"
+            [(ngModel)]="selectedContact.lastName"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail">Enter Email Address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail"
+            id="exampleInputCompany"
+            ngModel
+            id="emailAddr"
+            name="emailAddr"
+            #emailAddr="ngModel"
+            [(ngModel)]="selectedContact.emailAddr"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputCompany">Enter Company Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputCompany"
+            id="exampleInputCompany"
+            ngModel
+            id="companyName"
+            name="companyName"
+            #companyName="ngModel"
+            [(ngModel)]="selectedContact.companyName"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputMobile">Enter Mobile Contact Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputMobile"
+            ngModel
+            id="mobileNumber"
+            name="mobileNumber"
+            #mobileNumber="ngModel"
+            [(ngModel)]="selectedContact.mobileNumber"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputHome">Enter Home Contact Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputHome"
+            ngModel
+            id="homeNumber"
+            name="homeNumber"
+            #homeNumber="ngModel"
+            [(ngModel)]="selectedContact.homeNumber"
+          />
+        </div>
+        <button type="submit" class="btn btn-success mx-auto d-block">
+          Update the Contact
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+<footer class="bg-dark text-center text-white">
+  <div class="container p-4">
+    <section class="mb-4">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio
+        earum repellat quaerat voluptatibus placeat nam, commodi optio pariatur
+        est quia magnam eum harum corrupti dicta, aliquam sequi voluptate quas.
+      </p>
+    </section>
+  </div>
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    © 2020 Copyright:
+    <a class="text-white" href="#">ContactManager.com</a>
+  </div>
+</footer>

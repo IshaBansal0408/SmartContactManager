@@ -1,0 +1,126 @@
+<div class="container" style="margin-top: 10px; padding: 20px">
+  <h1 style="text-align: center">Fill the details to Add a new Contact</h1>
+
+  <div>
+    <img
+      src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
+      class="rounded mx-auto d-block"
+      alt="..."
+      height="300px"
+      *ngIf="toggleSampleImage"
+    />
+    <img
+      [src]="imageURL"
+      class="rounded mx-auto d-block"
+      alt="Contact Image Not Found"
+      height="300px"
+      *ngIf="toggleContactImage"
+    />
+    <br />
+    <button
+      type="submit"
+      class="btn btn-info mx-auto d-block"
+      (click)="setContactImage()"
+    >
+      Add Image for the Contact
+    </button>
+    <form #addContactForm="ngForm" (ngSubmit)="addNewContact(addContactForm)">
+      <div class="form-group">
+        <label for="exampleInputFirstName">Enter First Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputFirstName"
+          ngModel
+          id="firstName"
+          name="firstName"
+          #firstName="ngModel"
+          placeholder="Enter First Name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputLastName">Enter Last Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputLastName"
+          ngModel
+          id="lastName"
+          name="lastName"
+          #lastName="ngModel"
+          placeholder="Enter Last Name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail">Enter Email Address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail"
+          ngModel
+          id="emailAddr"
+          name="emailAddr"
+          #emailAddr="ngModel"
+          placeholder="Enter Email Address"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputCompany">Enter Company Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputCompany"
+          ngModel
+          id="companyName"
+          name="companyName"
+          #companyName="ngModel"
+          placeholder="Enter Company Name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputMobile">Enter Mobile Contact Number</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputMobile"
+          ngModel
+          id="mobileNumber"
+          name="mobileNumber"
+          #mobileNumber="ngModel"
+          placeholder="Enter Mobile Contact Number"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputHome">Enter Home Contact Number</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputHome"
+          ngModel
+          id="homeNumber"
+          name="homeNumber"
+          #homeNumber="ngModel"
+          placeholder="Enter Home Contact Number"
+        />
+      </div>
+      <button type="submit" class="btn btn-success mx-auto d-block">
+        Add the new Contact
+      </button>
+    </form>
+  </div>
+</div>
+<footer class="bg-dark text-center text-white">
+  <div class="container p-4">
+    <section class="mb-4">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio
+        earum repellat quaerat voluptatibus placeat nam, commodi optio pariatur
+        est quia magnam eum harum corrupti dicta, aliquam sequi voluptate quas.
+      </p>
+    </section>
+  </div>
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    © 2020 Copyright:
+    <a class="text-white" href="#">ContactManager.com</a>
+  </div>
+</footer>
