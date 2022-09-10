@@ -3,7 +3,13 @@
     {{ selectedContact.firstName }} {{ selectedContact.lastName }}
   </h1>
   <div class="card" style="width: 100%">
-    <img [src]="selectedContact.contactImg" class="card-img-top" alt="..." />
+    <img
+      [src]="selectedContact.contactImg"
+      class="rounded mx-auto d-block"
+      alt="..."
+      height="500px"
+      width="500px"
+    />
     <div class="card-body">
       <h1>{{ selectedContact.firstName }} {{ selectedContact.lastName }}</h1>
       <h2 class="card-title">{{ selectedContact.companyName }}</h2>

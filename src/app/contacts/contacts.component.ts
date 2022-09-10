@@ -37,6 +37,11 @@ export class ContactsComponent implements OnInit {
         this.allContacts = this.cService.getAllContacts().subscribe((data) => {
           console.log(data);
           this.allContacts = data;
+
+          if (this.allContacts.length === 0) {
+            this.noContactMessage = !this.noContactMessage;
+            console.log('No contacts found!');
+          }
         });
       });
     }

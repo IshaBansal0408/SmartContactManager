@@ -38,6 +38,7 @@ export class UpdateContactComponent implements OnInit {
     });
   }
 
+  noContactMessage = false;
   updateContact(form: NgForm) {
     window.alert('Contact has been Updated successfull!');
     form.value.contactImg = this.imageURL;
@@ -47,6 +48,16 @@ export class UpdateContactComponent implements OnInit {
         console.log(res);
       });
     this.router.navigate(['contacts']);
+
+    this.allContacts = this.cService.getAllContacts().subscribe((data) => {
+      console.log(data);
+      this.allContacts = data;
+
+      if (this.allContacts.length === 0) {
+        this.noContactMessage = !this.noContactMessage;
+        console.log('No contacts found!');
+      }
+    });
   }
 
   toggleOldImage = true;
